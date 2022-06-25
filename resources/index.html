@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Sudoku</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/sudoku.js"></script>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-flow: row wrap;
+        overflow: hidden;
+    }
+
+    td {
+        width: 10vh;
+        height: 10vh;
+    }
+
+    table,
+    th,
+    td {
+        /* border: 0px solid gray;*/
+        text-align: center;
+        font-size: 5vh;
+        /*float: left;*/
+    }
+
+    .flex {
+        margin: 5vh;
+    }
+
+    button {
+        margin: 3vh;
+    }
+
+    #mail {
+        color: gray;
+        text-decoration: none;
+    }
+
+    p {
+        color: whitesmoke;
+    }
+
+    /* cells borders */
+    #row1 #cell1,
+    #row1 #cell4,
+    #row1 #cell7,
+    #row4 #cell1,
+    #row4 #cell4,
+    #row4 #cell7,
+    #row7 #cell1,
+    #row7 #cell4,
+    #row7 #cell7 {
+        border-top: 5px solid lightslategray;
+        border-left: 5px solid lightslategray;
+    }
+
+    #row1 #cell2,
+    #row1 #cell5,
+    #row1 #cell8,
+    #row4 #cell2,
+    #row4 #cell5,
+    #row4 #cell8,
+    #row7 #cell2,
+    #row7 #cell5,
+    #row7 #cell8,
+    #row1 #cell3,
+    #row1 #cell6,
+    #row1 #cell9,
+    #row4 #cell3,
+    #row4 #cell6,
+    #row4 #cell9,
+    #row7 #cell3,
+    #row7 #cell6,
+    #row7 #cell9 {
+        border-top: 5px solid lightslategray;
+    }
+
+    #row2 #cell1,
+    #row2 #cell4,
+    #row2 #cell7,
+    #row3 #cell1,
+    #row3 #cell4,
+    #row3 #cell7,
+    #row5 #cell1,
+    #row5 #cell4,
+    #row5 #cell7,
+    #row6 #cell1,
+    #row6 #cell4,
+    #row6 #cell7,
+    #row8 #cell1,
+    #row8 #cell4,
+    #row8 #cell7,
+    #row9 #cell1,
+    #row9 #cell4,
+    #row9 #cell7 {
+        border-left: 5px solid lightslategray;
+    }
+
+    #row1 #cell9,
+    #row2 #cell9,
+    #row3 #cell9,
+    #row4 #cell9,
+    #row5 #cell9,
+    #row6 #cell9,
+    #row7 #cell9,
+    #row8 #cell9,
+    #row9 #cell9 {
+        border-right: 5px solid lightslategray;
+    }
+
+    #row9 {
+        border-bottom: 5px solid lightslategray;
+    }
+</style>
+
+<body>
+    <table class="flex">
+        <tr id="row1">
+            <td id="cell1" contenteditable>0</td>
+            <td id="cell2" contenteditable>0</td>
+            <td id="cell3" contenteditable>0</td>
+            <td id="cell4" contenteditable>0</td>
+            <td id="cell5" contenteditable>0</td>
+            <td id="cell6" contenteditable>0</td>
+            <td id="cell7" contenteditable>0</td>
+            <td id="cell8" contenteditable>0</td>
+            <td id="cell9" contenteditable>0</td>
+        </tr>
+        <tr id="row2">
+            <td id="cell1" contenteditable>0</td>
+            <td id="cell2" contenteditable>0</td>
+            <td id="cell3" contenteditable>0</td>
+            <td id="cell4" contenteditable>0</td>
+            <td id="cell5" contenteditable>0</td>
+            <td id="cell6" contenteditable>0</td>
+            <td id="cell7" contenteditable>0</td>
+            <td id="cell8" contenteditable>0</td>
+            <td id="cell9" contenteditable>0</td>
+        </tr>
+        <tr id="row3">
+            <td id="cell1" contenteditable>0</td>
+            <td id="cell2" contenteditable>0</td>
+            <td id="cell3" contenteditable>0</td>
+            <td id="cell4" contenteditable>0</td>
+            <td id="cell5" contenteditable>0</td>
+            <td id="cell6" contenteditable>0</td>
+            <td id="cell7" contenteditable>0</td>
+            <td id="cell8" contenteditable>0</td>
+            <td id="cell9" contenteditable>0</td>
+        </tr>
+        <tr id="row4">
+            <td id="cell1" contenteditable>0</td>
+            <td id="cell2" contenteditable>0</td>
+            <td id="cell3" contenteditable>0</td>
+            <td id="cell4" contenteditable>0</td>
+            <td id="cell5" contenteditable>0</td>
+            <td id="cell6" contenteditable>0</td>
+            <td id="cell7" contenteditable>0</td>
+            <td id="cell8" contenteditable>0</td>
+            <td id="cell9" contenteditable>0</td>
+        </tr>
+        <tr id="row5">
+            <td id="cell1" contenteditable>0</td>
+            <td id="cell2" contenteditable>0</td>
+            <td id="cell3" contenteditable>0</td>
+            <td id="cell4" contenteditable>0</td>
+            <td id="cell5" contenteditable>0</td>
+            <td id="cell6" contenteditable>0</td>
+            <td id="cell7" contenteditable>0</td>
+            <td id="cell8" contenteditable>0</td>
+            <td id="cell9" contenteditable>0</td>
+        </tr>
+        <tr id="row6">
+            <td id="cell1" contenteditable>0</td>
+            <td id="cell2" contenteditable>0</td>
+            <td id="cell3" contenteditable>0</td>
+            <td id="cell4" contenteditable>0</td>
+            <td id="cell5" contenteditable>0</td>
+            <td id="cell6" contenteditable>0</td>
+            <td id="cell7" contenteditable>0</td>
+            <td id="cell8" contenteditable>0</td>
+            <td id="cell9" contenteditable>0</td>
+        </tr>
+        <tr id="row7">
+            <td id="cell1" contenteditable>0</td>
+            <td id="cell2" contenteditable>0</td>
+            <td id="cell3" contenteditable>0</td>
+            <td id="cell4" contenteditable>0</td>
+            <td id="cell5" contenteditable>0</td>
+            <td id="cell6" contenteditable>0</td>
+            <td id="cell7" contenteditable>0</td>
+            <td id="cell8" contenteditable>0</td>
+            <td id="cell9" contenteditable>0</td>
+        </tr>
+        <tr id="row8">
+            <td id="cell1" contenteditable>0</td>
+            <td id="cell2" contenteditable>0</td>
+            <td id="cell3" contenteditable>0</td>
+            <td id="cell4" contenteditable>0</td>
+            <td id="cell5" contenteditable>0</td>
+            <td id="cell6" contenteditable>0</td>
+            <td id="cell7" contenteditable>0</td>
+            <td id="cell8" contenteditable>0</td>
+            <td id="cell9" contenteditable>0</td>
+        </tr>
+        <tr id="row9">
+            <td id="cell1" contenteditable>0</td>
+            <td id="cell2" contenteditable>0</td>
+            <td id="cell3" contenteditable>0</td>
+            <td id="cell4" contenteditable>0</td>
+            <td id="cell5" contenteditable>0</td>
+            <td id="cell6" contenteditable>0</td>
+            <td id="cell7" contenteditable>0</td>
+            <td id="cell8" contenteditable>0</td>
+            <td id="cell9" contenteditable>0</td>
+        </tr>
+    </table>
+    <div id="panel" class="flex">
+        <center>
+            <h1><strong>Sudoku</strong></h1>
+            <label for="#clues" style="font-size:3vh">Number of clues:</label>
+            <input type="number" id="clues" placeholder="17 - 36 recommended" class="form-control" min="10" max="36" />
+            <button id="gen" class="btn btn-primary">Generate</button>
+            <button id="check" class="btn btn-warning">Check</button>
+            <div class="alert alert-primary alert-dismisssable" hidden id="gened">Generated!</div>
+            <div class="alert alert-success alert-dismisssable" hidden id="success">Solved!</div>
+            <div class="alert alert-danger alert-dismisssable" hidden id="failed">Try again</div>
+            <br />
+            <p>By dg</p>
+            <a href="mailto:gg78qvf6m@mozmail.com?subject=Sudoku v0.1 Suggestion(s)" id="mail">Bugs / Suggestions?</a>
+        </center>
+    </div>
+</body>
+<script>
+    // create new sudoku with provided number of clues
+    document.querySelector("#gen").addEventListener("click", function () {
+        //clear, get + check number of clues
+        clear();
+        let cl = +document.querySelector('#clues').value;
+        if (!cl) {
+            cl = 17; //25
+            alert("Invalid value. Set to 17");
+        } else if (cl < 10) {
+            cl = 10; //may have multiple solutions
+            alert("Too few clues. Set to 10");
+        }
+        else if (cl > 36) {
+            cl = 36; //40-45
+            alert("Too many clues. Set to 36")
+        }
+        let puzzle = generate(cl);
+
+        //write numbers
+        for (let i = 1; i < 10; i++) {
+            for (let j = 1; j < 10; j++) {
+                document.querySelector(`#row${i} #cell${j}`).innerHTML = puzzle[i - 1][j - 1]
+                if (puzzle[i - 1][j - 1] != 0) {
+                    document.querySelector(`#row${i} #cell${j}`).setAttribute("contenteditable", "false")
+                } else {
+                    document.querySelector(`#row${i} #cell${j}`).setAttribute("contenteditable", "true")
+                }
+            }
+        }
+
+        //notis
+        document.querySelector("#gened").hidden = false;
+        document.querySelector("#gened").addEventListener("mousedown", () => {
+            document.querySelector("#gened").hidden = true;
+        })
+        document.querySelector(".flex").addEventListener("mousedown", () => {
+            document.querySelector("#gened").hidden = true;
+        })
+        document.querySelector("#failed").hidden = true;
+        document.querySelector("#success").hidden = true;
+    })
+
+    //check sudoku
+    document.querySelector("#check").addEventListener("click", function () {
+        let ans = [
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        ];
+
+        //get input data
+        for (let i = 1; i < 10; i++) {
+            for (let j = 1; j < 10; j++) {
+                ans[i - 1][j - 1] = +document.querySelector(`#row${i} #cell${j}`).innerHTML
+            }
+        }
+
+        //notis
+        if (check(ans)) {
+            document.querySelector("#success").hidden = false;
+            document.querySelector("#failed").hidden = true;
+        } else {
+            document.querySelector("#failed").hidden = false;
+        }
+    })
+
+    //sudoku generate + check algorithm in seperate file
+</script>
+
+</html>
