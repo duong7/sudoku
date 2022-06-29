@@ -1,6 +1,6 @@
 {
   "applicationId": "d7.sudoku",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "defaultMode": "window",
   "port": 0,
   "documentRoot": "/resources/",
@@ -31,7 +31,7 @@
   },
   "modes": {
     "window": {
-      "title": "Sudoku v0.1.2 alpha",
+      "title": "Sudoku v0.1.3 RC",
       "width": 1000,
       "height": 600,
       "minWidth": 1000,
@@ -39,7 +39,7 @@
       "fullScreen": false,
       "alwaysOnTop": false,
       "icon": "/resources/icons/appIcon.png",
-      "enableInspector": false,
+      "enableInspector": true,
       "borderless": false,
       "maximize": false,
       "hidden": false,

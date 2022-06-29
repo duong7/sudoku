@@ -107,3 +107,61 @@ INFO 2022-06-29 17:29:41,905 Auth info was exported to ./.tmp/auth_info.json api
 ERROR 2022-06-29 17:29:43,498 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
 INFO 2022-06-29 17:31:43,940 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
 ERROR 2022-06-29 17:31:45,327 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:07:44,903 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:07:47,095 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:08:36,182 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:08:37,552 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:08:59,677 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:09:01,725 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:10:41,042 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:10:42,676 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:11:08,919 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:11:11,689 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:16:38,443 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:16:40,057 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:17:13,995 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:17:17,586 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:17:48,459 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:17:49,970 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:19:11,984 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:19:13,566 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:20:43,847 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:20:46,172 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:22:44,967 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:22:46,557 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:24:35,993 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:24:40,116 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:26:36,587 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:26:38,020 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:27:27,848 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:27:29,324 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:44:58,860 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:45:00,309 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:51:40,521 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:51:41,971 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 19:55:29,006 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 19:55:30,861 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 20:14:02,770 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 20:14:11,586 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 20:20:42,452 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 20:20:43,983 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 20:21:18,741 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 20:21:20,174 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 20:22:01,198 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 20:22:02,636 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 20:32:47,957 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 20:32:49,718 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 20:37:17,100 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 20:37:18,924 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 20:41:50,585 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 20:41:52,774 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 20:49:19,411 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 20:49:21,501 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 20:49:59,098 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 20:50:00,894 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 20:53:30,440 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 20:53:32,049 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 20:54:16,761 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 20:54:18,655 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT
+INFO 2022-06-29 20:55:07,805 Auth info was exported to ./.tmp/auth_info.json api\debug\debug.cpp:14 ADMIN@DEADCAT
+ERROR 2022-06-29 20:55:09,647 Unable to open ./resources/favicon.ico api\debug\debug.cpp:16 ADMIN@DEADCAT

@@ -123,7 +123,7 @@
     }
 
     .empty {
-        color:white;
+        color: white;
     }
 </style>
 
@@ -237,7 +237,7 @@
             <button id="gen" class="btn btn-primary">Generate</button>
             <button id="check" class="btn btn-warning">Check</button>
             <div class="alert alert-primary alert-dismisssable" hidden id="gened">Generated!</div>
-            <div class="alert alert-success alert-dismisssable" hidden id="success">Solved!</div>
+            <div class="alert alert-success alert-dismisssable" hidden id="success">Congratulations!</div>
             <div class="alert alert-danger alert-dismisssable" hidden id="failed">Try again</div>
             <br />
             <p>By dg</p>
@@ -252,11 +252,11 @@
         clear();
         let cl = +document.querySelector('#clues').value;
         if (!cl) {
-            cl = 17; //25
-            alert("Invalid value. Set to 17");
-        } else if (cl < 10) {
-            cl = 10; //may have multiple solutions
-            alert("Too few clues. Set to 10");
+            cl = 25;
+            alert("Invalid value. Set to 25");
+        } else if (cl < 18) {
+            cl = 18; //may have multiple solutions
+            alert("Too few clues. Set to 18");
         }
         else if (cl > 36) {
             cl = 36; //40-45
@@ -267,15 +267,23 @@
         //write numbers
         for (let i = 1; i < 10; i++) {
             for (let j = 1; j < 10; j++) {
-                document.querySelector(`#row${i} #cell${j}`).innerHTML = puzzle[i - 1][j - 1]
+                let cell = document.querySelector(`#row${i} #cell${j}`);
+                if(puzzle[i - 1][j - 1] != 0) cell.innerHTML = puzzle[i - 1][j - 1];
+                cell.addEventListener('DOMSubtreeModified', (x) => {
+                    if (cell.innerHTML.toString() == '0') {
+                        cell.classList.add('empty');
+                    } else {
+                        cell.classList.remove('empty');
+                    }
+                });
+                //cell.addEventListener('focus', (x) => {
+                //    if (cell.innerHTML.toString()==0) cell.innerHTML = '';
+                //})
                 if (puzzle[i - 1][j - 1] != 0) {
-                    document.querySelector(`#row${i} #cell${j}`).setAttribute("contenteditable", "false");
-                    //change color for non-zero boxes
-                    document.querySelector(`#row${i} #cell${j}`).classList.remove('empty');
+                    cell.setAttribute("contenteditable", "false");
+                    cell.classList.remove('empty');
                 } else {
-                    document.querySelector(`#row${i} #cell${j}`).setAttribute("contenteditable", "true");
-                    //set zeroes to white color
-                    document.querySelector(`#row${i} #cell${j}`).classList.add('empty');
+                    cell.setAttribute("contenteditable", "true");
                 }
             }
         }
