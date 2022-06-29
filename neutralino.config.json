@@ -31,7 +31,7 @@
   },
   "modes": {
     "window": {
-      "title": "Sudoku v0.1.1 alpha",
+      "title": "Sudoku v0.1.2 alpha",
       "width": 1000,
       "height": 600,
       "minWidth": 1000,
