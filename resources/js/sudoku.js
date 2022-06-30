@@ -364,7 +364,8 @@ function generate(clues) {
 }
 */
 function check(board) {
-  //try {
+  //if empty cells available, check if answer equals to solution
+  var isEmpty = false;
   /*[1, 2, 3, 4, 5, 6, 7, 8, 9],
     [1, 2, 3, 4, 5, 6, 7, 8, 9],
     [1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -374,60 +375,79 @@ function check(board) {
     [1, 2, 3, 4, 5, 6, 7, 8, 9],
     [1, 2, 3, 4, 5, 6, 7, 8, 9],
     [1, 2, 3, 4, 5, 6, 7, 8, 9],*/
-  let boxes = [ //coors
-    [[0, 0], [1, 0], [2, 0], [0, 1], [1, 1], [2, 1], [0, 2], [1, 2], [2, 2]],
-    [[0, 3], [1, 3], [2, 3], [0, 4], [1, 4], [2, 4], [0, 5], [1, 5], [2, 5]],
-    [[0, 6], [1, 6], [2, 6], [0, 7], [1, 7], [2, 7], [0, 8], [1, 8], [2, 8]],
-    [[3, 0], [4, 0], [5, 0], [3, 1], [4, 1], [5, 1], [3, 2], [4, 2], [5, 2]],
-    [[3, 3], [4, 3], [5, 3], [3, 4], [4, 4], [5, 4], [3, 5], [4, 5], [5, 5]],
-    [[3, 6], [4, 6], [5, 6], [3, 7], [4, 7], [5, 7], [3, 8], [4, 8], [5, 8]],
-    [[6, 0], [7, 0], [8, 0], [6, 1], [7, 1], [8, 1], [6, 2], [7, 2], [8, 2]],
-    [[6, 3], [7, 3], [8, 3], [6, 4], [7, 4], [8, 4], [6, 5], [7, 5], [8, 5]],
-    [[6, 6], [7, 6], [8, 6], [6, 7], [7, 7], [8, 7], [6, 8], [7, 8], [8, 8]],
-  ];
-  //check rows
   for (var i = 0; i < 9; i++) {
-    let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     for (var j = 0; j < 9; j++) {
-      if (nums.includes(board[i][j])) {
-        nums.splice(nums.indexOf(board[i][j]), 1);
-      } else {
-        return false;
+      if ([0, NaN].includes(+board[i][j])) isEmpty = true;
+    }
+  }
+  if (!isEmpty) {
+    //if no empty cells, check if valid sudoku
+    let boxes = [ //coors
+      [[0, 0], [1, 0], [2, 0], [0, 1], [1, 1], [2, 1], [0, 2], [1, 2], [2, 2]],
+      [[0, 3], [1, 3], [2, 3], [0, 4], [1, 4], [2, 4], [0, 5], [1, 5], [2, 5]],
+      [[0, 6], [1, 6], [2, 6], [0, 7], [1, 7], [2, 7], [0, 8], [1, 8], [2, 8]],
+      [[3, 0], [4, 0], [5, 0], [3, 1], [4, 1], [5, 1], [3, 2], [4, 2], [5, 2]],
+      [[3, 3], [4, 3], [5, 3], [3, 4], [4, 4], [5, 4], [3, 5], [4, 5], [5, 5]],
+      [[3, 6], [4, 6], [5, 6], [3, 7], [4, 7], [5, 7], [3, 8], [4, 8], [5, 8]],
+      [[6, 0], [7, 0], [8, 0], [6, 1], [7, 1], [8, 1], [6, 2], [7, 2], [8, 2]],
+      [[6, 3], [7, 3], [8, 3], [6, 4], [7, 4], [8, 4], [6, 5], [7, 5], [8, 5]],
+      [[6, 6], [7, 6], [8, 6], [6, 7], [7, 7], [8, 7], [6, 8], [7, 8], [8, 8]],
+    ];
+    let solved = true;
+    //check rows
+    for (var i = 0; i < 9; i++) {
+      let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      for (var j = 0; j < 9; j++) {
+        if (nums.includes(board[i][j])) {
+          nums.splice(nums.indexOf(board[i][j]), 1);
+        } else {
+          solved = false;
+        }
+      }
+    }
+    //check cols
+    for (var i = 0; i < 9; i++) {
+      let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      for (var j = 0; j < 9; j++) {
+        if (nums.includes(board[j][i])) {
+          nums.splice(nums.indexOf(board[j][i]), 1);
+        } else {
+          solved = false;
+        }
+      }
+    }
+    //check 3x3 boxes
+    for (var i = 0; i < 9; i++) {
+      let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      for (var j = 0; j < 9; j++) {
+        if (nums.includes(board[boxes[i][j][0]][boxes[i][j][1]])) {
+          nums.splice(nums.indexOf(board[boxes[i][j][0]][boxes[i][j][1]]), 1);
+        } else {
+          solved = false;
+        }
+      }
+    }
+    return solved;
+  } else {
+    for (var i = 0; i < 9; i++) {
+      for (var j = 0; j < 9; j++) {
+        if (+board[i][j] != solution[i][j]) {
+          document.querySelector(`#row${i + 1} #cell${j + 1}`).classList.add('wrong');
+        } else {
+          try {
+            document.querySelector(`#row${i + 1} #cell${j + 1}`).classList.remove('wrong');
+          } catch (e) {
+            console.log(e);
+          }
+        }
       }
     }
   }
-  //check cols
-  for (var i = 0; i < 9; i++) {
-    let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    for (var j = 0; j < 9; j++) {
-      if (nums.includes(board[j][i])) {
-        nums.splice(nums.indexOf(board[j][i]), 1);
-      } else {
-        return false;
-      }
-    }
-  }
-  //check 3x3 boxes
-  for (var i = 0; i < 9; i++) {
-    let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    for (var j = 0; j < 9; j++) {
-      if (nums.includes(board[boxes[i][j][0]][boxes[i][j][1]])) {
-        nums.splice(nums.indexOf(board[boxes[i][j][0]][boxes[i][j][1]]), 1);
-      } else {
-        return false;
-      }
-    }
-  }
-  return true;
   //} catch (e) {
   //  console.error(e);
   //  return false;
   //}
-  /*if (JSON.stringify(board) == JSON.stringify(solution)) {
-    return true;
-  } else {
-    return false;
-  }*/
+
 }
 function generate(clues) {
   let board = [[]];
@@ -522,7 +542,7 @@ function generate(clues) {
       cIndices.splice(cIndices.indexOf(col2Index), 1);
     } while (cIndices.length > 1);
   }
-  console.table(board);
+  //console.table(board);
   console.log(JSON.stringify(board));
   //swap 3 rows at once, 3 cols at once to be implemented...
   //copy solution
