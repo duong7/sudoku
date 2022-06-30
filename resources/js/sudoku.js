@@ -244,7 +244,7 @@ let squares = [
 ]; */
 //let digits
 //let clues = 20; //17-50
-var solution = [[],[],[],[],[],[],[],[],[]];
+var solution = [[], [], [], [], [], [], [], [], []];
 
 function clear() {
   for (let i = 1; i < 10; i++) {
@@ -301,7 +301,7 @@ function clear() {
   }
   console.log("cleared");
 }
-
+/*
 function square(box) {
   //return id of 3x3 box
   if ([0, 1, 2].includes(box[0])) {
@@ -320,7 +320,6 @@ function square(box) {
     if ([6, 7, 8].includes(box[1])) return 8;
   }
 }
-/*
 function generate(clues) {
   let required_nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   for (let i = 0; i < 8; i++) {
@@ -366,55 +365,69 @@ function generate(clues) {
 */
 function check(board) {
   //try {
-  /*let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    let boxes = [
-      [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    ];
-    for (var i = 0; i < 9; i++) {
-      for (var j of board[i]) {
-        if (nums.indexOf(board[i][j]) == -1) return false;
-        if (nums.includes(board[i][j])) {
-          nums.splice(nums.indexOf(board[i][j]), 1);
-        }
+  /*[1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],*/
+  let boxes = [ //coors
+    [[0, 0], [1, 0], [2, 0], [0, 1], [1, 1], [2, 1], [0, 2], [1, 2], [2, 2]],
+    [[0, 3], [1, 3], [2, 3], [0, 4], [1, 4], [2, 4], [0, 5], [1, 5], [2, 5]],
+    [[0, 6], [1, 6], [2, 6], [0, 7], [1, 7], [2, 7], [0, 8], [1, 8], [2, 8]],
+    [[3, 0], [4, 0], [5, 0], [3, 1], [4, 1], [5, 1], [3, 2], [4, 2], [5, 2]],
+    [[3, 3], [4, 3], [5, 3], [3, 4], [4, 4], [5, 4], [3, 5], [4, 5], [5, 5]],
+    [[3, 6], [4, 6], [5, 6], [3, 7], [4, 7], [5, 7], [3, 8], [4, 8], [5, 8]],
+    [[6, 0], [7, 0], [8, 0], [6, 1], [7, 1], [8, 1], [6, 2], [7, 2], [8, 2]],
+    [[6, 3], [7, 3], [8, 3], [6, 4], [7, 4], [8, 4], [6, 5], [7, 5], [8, 5]],
+    [[6, 6], [7, 6], [8, 6], [6, 7], [7, 7], [8, 7], [6, 8], [7, 8], [8, 8]],
+  ];
+  //check rows
+  for (var i = 0; i < 9; i++) {
+    let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    for (var j = 0; j < 9; j++) {
+      if (nums.includes(board[i][j])) {
+        nums.splice(nums.indexOf(board[i][j]), 1);
+      } else {
+        return false;
       }
     }
-    for (var i = 0; i < 9; i++) {
-      for (var j = 0; j < 9; j++) {
-        if (nums.indexOf(board[j][i]) == -1) return false;
-        if (nums.includes(board[j][i])) {
-          nums.splice(nums.indexOf(board[i][j]), 1);
-        }
+  }
+  //check cols
+  for (var i = 0; i < 9; i++) {
+    let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    for (var j = 0; j < 9; j++) {
+      if (nums.includes(board[j][i])) {
+        nums.splice(nums.indexOf(board[j][i]), 1);
+      } else {
+        return false;
       }
     }
-    for (var i = 0; i < 9; i++) {
-      for (var j = 0; j < 9; j++) {
-        if (boxes[square(board[i][j])].indexOf(board[i][j]) == -1) return false;
-        if (boxes[square(board[i][j])].includes(board[j][i])) {
-          boxes[square(board[i][j])].splice(
-            boxes[square(board[i][j])].indexOf(board[i][j]),
-            1
-          );
-        }
+  }
+  //check 3x3 boxes
+  for (var i = 0; i < 9; i++) {
+    let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    for (var j = 0; j < 9; j++) {
+      if (nums.includes(board[boxes[i][j][0]][boxes[i][j][1]])) {
+        nums.splice(nums.indexOf(board[boxes[i][j][0]][boxes[i][j][1]]), 1);
+      } else {
+        return false;
       }
     }
-    return true;*/
+  }
+  return true;
   //} catch (e) {
   //  console.error(e);
   //  return false;
   //}
-  if (JSON.stringify(board) == JSON.stringify(solution)) {
+  /*if (JSON.stringify(board) == JSON.stringify(solution)) {
     return true;
   } else {
     return false;
-  }
+  }*/
 }
 function generate(clues) {
   let board = [[]];
@@ -514,8 +527,8 @@ function generate(clues) {
   //swap 3 rows at once, 3 cols at once to be implemented...
   //copy solution
   for (var j = 0; j < 9; j++) {
-    for (var x = 0; x<9;x++) {
-    solution[j][x] = board[j][x];
+    for (var x = 0; x < 9; x++) {
+      solution[j][x] = board[j][x];
     }
   }
   //remove numbers
@@ -530,3 +543,4 @@ function generate(clues) {
   }
   return board;
 }
+

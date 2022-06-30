@@ -41,9 +41,12 @@
         margin: 3vh;
     }
 
-    #mail {
+    a {
         color: gray;
         text-decoration: none;
+        padding:0px;
+        margin:0px;
+       /* font-size: 5px;*/
     }
 
     p {
@@ -124,6 +127,25 @@
 
     .empty {
         color: white;
+    }
+
+    td p {
+        font-size:12px;
+        color: black;
+    }
+    #guide {
+        width:30vw;
+        border-spacing: 0px;
+    }
+    #gcell {
+        padding:0px;
+        margin:0px;
+        height:5px;
+        vertical-align: middle;
+    }
+    .cre {
+        /*font-size: 12px;*/
+        color: whitesmoke;
     }
 </style>
 
@@ -231,17 +253,43 @@
     </table>
     <div id="panel" class="flex">
         <center>
-            <h1><strong>Sudoku</strong></h1>
+            <h2><strong>Sudoku</strong> <span class="cre" hidden>by dg7</span></h2>
             <label for="#clues" style="font-size:3vh">Number of clues:</label>
-            <input type="number" id="clues" placeholder="17 - 36 recommended" class="form-control" min="10" max="36" />
+            <input type="number" id="clues" placeholder="18 - 48" class="form-control" min="10" max="36" />
             <button id="gen" class="btn btn-primary">Generate</button>
             <button id="check" class="btn btn-warning">Check</button>
+            <!--<table id="guide">
+                <tr>
+                    <td id="gcell"><p><strong>Number of clues</strong></p></td>
+                    <td id="gcell"><p><strong>Difficulty level</strong></p></td>
+                </tr>
+                <tr>
+                    <td id="gcell"><p>>46</p></td>
+                    <td id="gcell"><p>Extremely easy</p></td>
+                </tr>
+                <tr>
+                    <td id="gcell"><p>36-46</p></td>
+                    <td id="gcell"><p>Easy</p></td>
+                </tr>
+                <tr>
+                    <td id="gcell"><p>32-35</p></td>
+                    <td id="gcell"><p>Medium</p></td>
+                </tr>
+                <tr>
+                    <td  id="gcell"><p>28-31</p></td>
+                    <td id="gcell"><p>Difficult</p></td>
+                </tr>
+                <tr>
+                    <td id="gcell"><p>17-27</p></td>
+                    <td id="gcell"><p>Evil</p></td>
+                </tr>
+            </table>-->
             <div class="alert alert-primary alert-dismisssable" hidden id="gened">Generated!</div>
             <div class="alert alert-success alert-dismisssable" hidden id="success">Congratulations!</div>
             <div class="alert alert-danger alert-dismisssable" hidden id="failed">Try again</div>
             <br />
             <p>By dg</p>
-            <a href="mailto:gg78qvf6m@mozmail.com?subject=Sudoku v0.1 Suggestion(s)" id="mail">Bugs / Suggestions?</a>
+            <a href="mailto:gg78qvf6m@mozmail.com?subject=Sudoku Suggestion(s)">Bugs / Suggestions?</a>
         </center>
     </div>
 </body>
@@ -251,16 +299,16 @@
         //clear, get + check number of clues
         clear();
         let cl = +document.querySelector('#clues').value;
-        if (!cl) {
-            cl = 25;
-            alert("Invalid value. Set to 25");
+        if (!cl || Number(cl) == NaN) {
+            cl = 32;
+            alert("Invalid value. Set to 32");
         } else if (cl < 18) {
             cl = 18; //may have multiple solutions
             alert("Too few clues. Set to 18");
         }
-        else if (cl > 36) {
-            cl = 36; //40-45
-            alert("Too many clues. Set to 36");
+        else if (cl > 48) {
+            cl = 48; //40-45
+            alert("Too many clues. Set to 48");
         }
         let puzzle = generate(cl);
 
