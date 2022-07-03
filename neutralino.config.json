@@ -1,6 +1,6 @@
 {
   "applicationId": "dg7.sudoku",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "defaultMode": "window",
   "port": 0,
   "documentRoot": "/resources/",
@@ -9,8 +9,8 @@
   "enableNativeAPI": true,
   "tokenSecurity": "one-time",
   "logging": {
-    "enabled": true,
-    "writeToLogFile": true
+    "enabled": false,
+    "writeToLogFile": false
   },
   "nativeAllowList": [
     "app.*",
@@ -31,7 +31,7 @@
   },
   "modes": {
     "window": {
-      "title": "Sudoku v0.1.6",
+      "title": "Sudoku v0.1.7",
       "width": 1000,
       "height": 600,
       "minWidth": 1000,
